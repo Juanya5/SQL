@@ -1,0 +1,8 @@
+facility_sub_region_1 AS us_state,
+  COUNT(DISTINCT facility_place_id) AS num_vaccine_sites
+FROM
+  bigquery-public-data.covid19_vaccination_access.facility_boundary_us_all
+GROUP BY
+  facility_sub_region_1
+ORDER BY
+  us_state;
