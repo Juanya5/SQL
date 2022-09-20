@@ -1,0 +1,7 @@
+--Write a query that returns order date,shipping date ,sales shipping method and list by sales highest to lowest--
+
+SELECT Sales , State ,Order_date , Ship_Date , Ship_Mode
+FROM `data-science-358803.Sales_.Sales`
+WHERE State = "New York" 
+ORDER BY Sales DESC
+
