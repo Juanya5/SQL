@@ -1,0 +1,12 @@
+
+
+
+
+
+
+
+
+#what category has the fewest views?
+SELECT videoCategoryLabel,viewCount 
+FROM `nashvillehousing-366203.Youtube.Youtube` 
+ORDER BY viewcount ASC
