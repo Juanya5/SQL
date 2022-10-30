@@ -1,12 +1,11 @@
-
-
-
-
-
-
-
-
-#what category has the fewest views?
+#category view count lowest to highest
 SELECT videoCategoryLabel,viewCount 
 FROM `nashvillehousing-366203.Youtube.Youtube` 
 ORDER BY viewcount ASC
+
+#Category view count highest to lowest
+SELECT videoCategorylabel, likeCount
+ FROM `nashvillehousing-366203.Youtube.Youtube`
+ ORDER BY likeCount desc
+ 
+ SE
