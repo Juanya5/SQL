@@ -1,0 +1,8 @@
+SELECT * FROM agents;
+explain select *from agents;
+explain analyze select * from agents;
+explain analyze select * from orders where ord_amount> 2000;
+explain analyze select * from customer WHERE cust_city = 'London' or cust_city ='New York'
+create index on customer using btree(cust_city);
+explain analyze select * from orders where ord_amount=500.00
+create index on orders using hash(ord_amount);
