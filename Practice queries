@@ -1,0 +1,30 @@
+SELECT c.name, COUNT(o.id) AS total_orders, SUM(o.total_value) AS total_value
+FROM customers c
+JOIN (
+    SELECT *
+    FROM orders
+    WHERE order_date > DATEADD(day, -90, GETDATE())
+) o ON c.id = o.customer_id
+GROUP BY c.name
+ORDER BY total_orders DESC, total_value DESC
+LIMIT 5;
+
+
+
+SELECT c.name, COUNT(o.id) AS total_orders, SUM(o.total_value) AS total_value
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+WHERE o.order_date > DATEADD(day, -90, GETDATE())
+GROUP BY c.name
+ORDER BY total_orders DESC, total_value DESC
+LIMIT 5;
+
+
+SELECT p.name, COUNT(o.id) AS popularity
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+JOIN products p ON o.product_id = p.id
+WHERE c.age BETWEEN 18 AND 25
+GROUP BY p.name
+ORDER BY popularity DESC
+LIMIT 1;
